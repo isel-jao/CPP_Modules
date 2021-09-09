@@ -6,15 +6,14 @@
 
 class Ice : public AMateria
 {
-private:
-	/* data */
-public:
+public
+	:
 	Ice();
+	virtual ~Ice();
 	Ice(Ice const &obj);
-	Ice &operator=(Ice const &obj);
-	~Ice();
-
+	Ice &operator=(Ice const &);
 	virtual AMateria *clone() const;
+	virtual void use(ICharacter &target);
 };
 
 #endif

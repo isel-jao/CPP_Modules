@@ -15,7 +15,7 @@ protected:
 	string _type;
 
 public:
-	AMateria(string const &type);
+	AMateria(string const &type = "0x00");
 	AMateria(AMateria const &obj);
 	AMateria &operator=(AMateria const &obj);
 	~AMateria();

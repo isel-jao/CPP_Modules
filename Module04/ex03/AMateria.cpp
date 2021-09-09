@@ -22,12 +22,17 @@ AMateria &AMateria::operator=(AMateria const &obj)
 	return *this;
 }
 
-string const &AMateria::getType() const;
+string const &AMateria::getType() const
 {
 	return _type;
 }
 
-void AMateria::makeSound(void) const
+string const &AMateria::getType() const
 {
-	cout << "some random sound" << endl;
+	return (this->_type);
+}
+
+void AMateria::use(ICharacter &target)
+{
+	(void)target;
 }
