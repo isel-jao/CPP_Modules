@@ -1,7 +1,7 @@
 NAME = Interface
 
-SRCS	= Animal.cpp  Cat.cpp  Dog.cpp  main.cpp  Brain.cpp
-HEADERS	= Animal.hpp  Cat.hpp  Dog.hpp  Brain.hpp
+SRCS	= AMateria.cpp Cure.cpp MateriaSource.cpp Character.cpp Ice.cpp main.cpp
+HEADERS	= AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp IMateriaSource.hpp Ice.hpp MateriaSource.hpp
 
 CC			= clang++
 

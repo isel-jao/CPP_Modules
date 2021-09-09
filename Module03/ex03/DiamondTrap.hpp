@@ -11,11 +11,9 @@ private:
 
 public:
 	DiamondTrap(std::string const & = "anonymous");
-
 	DiamondTrap(DiamondTrap const &dt);
-
 	DiamondTrap &operator=(DiamondTrap const &rhs);
-
+	~DiamondTrap(void);
 	void whoAmI(void) const;
 };
 

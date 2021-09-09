@@ -25,7 +25,7 @@ Animal &Animal::operator=(Animal const &obj)
 	return *this;
 }
 
-string Animal::getType(void) const
+string const &Animal::getType(void) const
 {
 	return _type;
 }

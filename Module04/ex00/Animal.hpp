@@ -19,8 +19,9 @@ public:
 	Animal &operator=(Animal const &obj);
 	virtual ~Animal();
 
+	string const &getType(void) const;
+
 	virtual void makeSound(void) const;
-	string getType(void) const;
 };
 
 #endif

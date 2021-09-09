@@ -3,13 +3,11 @@
 # include "ClapTrap.hpp"
 
 
-class ScavTrap: virtual public ClapTrap {
+class ScavTrap: public ClapTrap {
 	public:
 		ScavTrap(string const& name = "0x00");
 		ScavTrap(ScavTrap const& obj);
-
 		ScavTrap &operator=(ScavTrap const &obj);
-
 		virtual ~ScavTrap();
 		
 		void 	attack(const string &target) const;

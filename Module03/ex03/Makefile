@@ -5,7 +5,7 @@ HEADERS	= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 CC			= clang++
 
-CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98 -Wshadow
 LD			= $(CC)
 
 OBJS		= $(SRCS:%.cpp=%.o)

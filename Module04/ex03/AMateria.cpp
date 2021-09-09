@@ -22,10 +22,6 @@ AMateria &AMateria::operator=(AMateria const &obj)
 	return *this;
 }
 
-string const &AMateria::getType() const
-{
-	return _type;
-}
 
 string const &AMateria::getType() const
 {

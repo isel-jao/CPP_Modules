@@ -6,6 +6,8 @@ using std::string;
 
 Character::Character(string name) : _Name(name), _Materia_count(0)
 {
+	for(int i = 0; i < 4 ; i++)
+		inventory[i] = NULL;
 	cout << "a Character was creatd" << endl;
 }
 
@@ -17,9 +19,9 @@ Character::Character(Character const &obj)
 
 Character &Character::operator=(Character const &obj)
 {
+	DeleteInventory();
 	this->_Name = obj._Name;
 	this->_Materia_count = obj._Materia_count;
-	DeleteInventory();
 	for (int i = 0; i < obj._Materia_count; i++)
 		inventory[i] = obj.inventory[i]->clone();
 	return (*this);
@@ -45,7 +47,7 @@ void Character::equip(AMateria *m)
 		cout << "full inventory!" << endl;
 		return;
 	}
-	this->inventory[_Materia_count] = m;
+	this->inventory[_Materia_count] = m->clone();
 	_Materia_count++;
 }
 
@@ -57,7 +59,7 @@ void Character::unequip(int idx)
 		return;
 	}
 	cout << "unequip" << endl;
-	delete this->inventory[idx];
+	delete inventory[idx];
 	for (int i = idx + 1; i < _Materia_count - 1; i++)
 		this->inventory[i] = this->inventory[i + 1];
 	this->_Materia_count--;
@@ -65,6 +67,11 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
+	if (idx < 0 || idx >= _Materia_count)
+	{
+		cout << _Materia_count << " not enouph" << endl;
+		return;
+	}
 	this->inventory[idx]->use(target);
 }
 
@@ -73,8 +80,11 @@ void Character::DeleteInventory()
 	for (int i = 0; i < this->_Materia_count; i++)
 	{
 		if (this->inventory[i])
-			delete this->inventory[i];
-		this->inventory[i] = NULL;
+		{
+			if (this->inventory[i])
+				delete this->inventory[i];
+			this->inventory[i] = NULL;
+		}
 	}
 	_Materia_count = 0;
 }

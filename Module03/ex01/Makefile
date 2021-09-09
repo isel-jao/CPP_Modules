@@ -30,5 +30,5 @@ fclean: clean
 re: fclean all
 
 test: all
-	@./${NAME}
+	@clear && ./${NAME}
 .PHONY: all clean fclean re
