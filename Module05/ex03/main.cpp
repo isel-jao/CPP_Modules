@@ -3,6 +3,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 #include <iomanip>
 #include <sstream>
 
@@ -12,19 +13,14 @@ int main()
 {
 	try
 	{
-		Bureaucrat b1("bureacrat1", 5);
-		Bureaucrat b2("bureacrat1", 25);
-		ShrubberyCreationForm s("sform");
-		RobotomyRequestForm r("rfomr");
-		PresidentialPardonForm p("pform");
-		s.beSigned(b1);
-		r.beSigned(b1);
-		p.beSigned(b1);
-		p.beSigned(b2);
-
-		s.execute(b1);
-		r.execute(b1);
-		p.execute(b1);
+		Intern someRandomIntern;
+		Form *valid;
+		Form *not_valid;
+		Bureaucrat b("beurcrat", 40);
+		valid = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+		b.signForm(*valid);
+		valid->execute(b);
+		not_valid = someRandomIntern.makeForm("robotomy request", "Bender");
 	}
 	catch (const std::exception &e)
 	{

@@ -1,5 +1,7 @@
 #include "./Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : name("0x00"), grade(0) {}
+
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : name(name), grade(grade)
 {
 	if (grade < 1)
@@ -65,11 +67,7 @@ void Bureaucrat::decrementGrade(void)
 
 void Bureaucrat::signForm(Form &form) const
 {
-	if (form.isSigned())
-	{
-		std::cout << this->getName() << " cannot sign " << form.getName() << " because the form is already signed." << std::endl;
-	}
-	else if (this->grade > form.getSignGrade())
+	if (this->grade > form.getSignGrade())
 	{
 		std::cout << this->getName() << " cannot sign " << form.getName() << " because it's grade is too low." << std::endl;
 	}

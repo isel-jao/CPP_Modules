@@ -11,8 +11,9 @@ class ShrubberyCreationForm : public Form
 {
 private:
 	std::string const target;
-	static std::string const tree_data[3];
+	static std::string const tree_data[2];
 
+	ShrubberyCreationForm();
 public:
 	ShrubberyCreationForm(std::string const &target);
 	ShrubberyCreationForm(ShrubberyCreationForm const &obj);

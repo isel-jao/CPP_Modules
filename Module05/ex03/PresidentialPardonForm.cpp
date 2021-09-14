@@ -1,5 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm() : Form("0x00", 0, 0), target("0x00") {}
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : Form("Shrubbery Creation", 25, 5), target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &obj) : Form(obj), target(obj.target) {}

@@ -9,11 +9,12 @@ class Form;
 class Form
 {
 private:
-	std::string const &name;
+	std::string const name;
 	bool _signed;
 	int const signGrade;
 	int const executeGrade;
 
+	Form();
 public:
 	Form(std::string const &name, int const signGrade, int const executeGrade);
 	Form(Form const &other);
@@ -25,10 +26,6 @@ public:
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
-	{
-		virtual const char *what() const throw();
-	};
-	class FormAlreadySignedException : public std::exception
 	{
 		virtual const char *what() const throw();
 	};
