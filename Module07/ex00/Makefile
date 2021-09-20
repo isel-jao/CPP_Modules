@@ -1,7 +1,7 @@
-NAME = Iter
+NAME = whatever
 
 SRCS	= main.cpp 
-HEADERS	= iter.hpp
+HEADERS	= whatever.hpp
 
 CC			= clang++
 

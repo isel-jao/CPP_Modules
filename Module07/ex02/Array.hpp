@@ -3,6 +3,7 @@
 
 #include <exception>
 #include <cctype>
+using std::exception;
 
 template <typename T>
 class Array
@@ -29,21 +30,22 @@ public:
 		for (unsigned int i = 0; i < n; i++)
 			arr[i] = obj.arr[i];
 	}
-	T &operator[](std::size_t index)
+	T &operator[](unsigned int index)
 	{
+		if (index >= n)
+			throw Array::OutOfRange();
 		return arr[index];
 	}
-	~Array()
-	{
-		delete[] arr;
-	}
-
-	class OutOfBoundsException : public std::exception
+	class OutOfRange : public std::exception
 	{
 		virtual const char *what() const throw()
 		{
-			return "ArrayException: index out of bounds";
+			return "ArrayException: index out of range";
 		}
+	};
+	~Array()
+	{
+		delete[] arr;
 	}
 
 	unsigned int size() const
@@ -51,5 +53,7 @@ public:
 		return n;
 	}
 };
+
+
 
 #endif

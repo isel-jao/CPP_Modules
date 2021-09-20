@@ -1,7 +1,7 @@
-NAME = Bureaucrat
+NAME = Iter
 
 SRCS	= main.cpp 
-HEADERS	= whatever.hpp
+HEADERS	= iter.hpp
 
 CC			= clang++
 
