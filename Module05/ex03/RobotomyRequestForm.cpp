@@ -1,6 +1,11 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("Shrubbery Creation", 72, 145), target(target) {}
+RobotomyRequestForm::RobotomyRequestForm() : Form("0x00", 0, 0), target("0x00") {}
+
+RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("Shrubbery Creation", 72, 45), target(target)
+{
+	srand(time(0));
+}
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &obj) : Form(obj), target(obj.target) {}
 

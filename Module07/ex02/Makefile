@@ -5,7 +5,8 @@ HEADERS	= Array.hpp
 
 CC			= clang++
 
-CPP_FLAGS	= -Wall -Wextra -Werror 
+# CPP_FLAGS	= -Wall -Wextra -Werror 
+CPP_FLAGS	= 
 LD			= $(CC)
 
 OBJS		= $(SRCS:%.cpp=%.o)

@@ -13,7 +13,6 @@ private:
 	int grade;
 
 	Bureaucrat();
-
 public:
 	Bureaucrat(std::string const &name, int grade);
 	Bureaucrat(Bureaucrat const &obj);

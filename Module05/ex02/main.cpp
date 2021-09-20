@@ -20,7 +20,6 @@ int main()
 		s.beSigned(b1);
 		r.beSigned(b1);
 		p.beSigned(b1);
-		p.beSigned(b2);
 
 		s.execute(b1);
 		r.execute(b1);

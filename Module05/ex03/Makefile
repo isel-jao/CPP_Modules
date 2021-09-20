@@ -1,7 +1,7 @@
 NAME = Bureaucrat
 
-SRCS	= Bureaucrat.cpp Form.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp
-HEADERS	= Bureaucrat.hpp Form.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp
+SRCS	= Bureaucrat.cpp Form.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp Intern.cpp
+HEADERS	= Bureaucrat.hpp Form.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp PresidentialPardonForm.hpp 
 
 CC			= clang++
 
@@ -33,4 +33,5 @@ test: all
 	@clear && \
 	echo compailed with success =================== && \
 	./${NAME}
+
 .PHONY: all clean fclean re

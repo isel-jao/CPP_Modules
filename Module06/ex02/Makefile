@@ -1,7 +1,7 @@
-NAME = serialization
+NAME = identify
 
-SRCS	= main.cpp  serialization.cpp
-HEADERS	= Cserialization.hpp
+SRCS	= identify.cpp main.cpp
+HEADERS	= identify.hpp
 
 CC			= clang++
 

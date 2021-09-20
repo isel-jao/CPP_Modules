@@ -11,6 +11,8 @@ class RobotomyRequestForm : public Form
 {
 private:
 	std::string const target;
+
+	RobotomyRequestForm();
 public:
 	RobotomyRequestForm(std::string const &target);
 	RobotomyRequestForm(RobotomyRequestForm const &obj);

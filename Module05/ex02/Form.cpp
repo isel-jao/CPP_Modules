@@ -1,5 +1,7 @@
 #include "./Form.hpp"
 
+Form::Form():name("0x00"), _signed(false), signGrade(0), executeGrade(0) {}
+
 Form::Form(std::string const &name, int const signGrade, int const executeGrade) : name(name), _signed(false), signGrade(signGrade), executeGrade(executeGrade)
 {
 	if (signGrade < 1 || executeGrade < 1)
@@ -30,11 +32,6 @@ const char *Form::GradeTooLowException::what() const throw()
 	return "FormException: Grade too Low";
 }
 
-const char *Form::FormAlreadySignedException::what() const throw()
-{
-	return "FormException: The Form is already signed";
-}
-
 const char *Form::UnsignedFormException::what() const throw()
 {
 	return "FormException: Unsigned form can not be executed";
@@ -61,8 +58,6 @@ bool Form::isSigned(void) const
 
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
-	if (_signed == true)
-		throw Form::FormAlreadySignedException();
 	if (bureaucrat.getGrade() > signGrade)
 		throw Form::GradeTooLowException();
 	_signed = true;

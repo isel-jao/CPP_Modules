@@ -1,7 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 
-std::string const ShrubberyCreationForm::tree_data[3] = {
-"          .     .  .      +     .      .          .\n\
+std::string const ShrubberyCreationForm::tree_data[2] = {
+    "          .     .  .      +     .      .          .\n\
      .       .      .     #       .           .\n\
         .      .         ###            .      .      .\n\
       .      .   \"#:. .:##\"##:. .:#\"  .      .\n\
@@ -17,23 +17,7 @@ std::string const ShrubberyCreationForm::tree_data[3] = {
             .     \"      000      \"    .     .\n\
        .         .   .   000     .        .       .\n\
 .. .. ..................O000O........................ ...... ...",
-"          .     .  .      +     .      .          .\n\
-     .       .      .     #       .           .\n\
-        .      .         ###            .      .      .\n\
-      .      .   \"#:. .:##\"##:. .:#\"  .      .\n\
-          .      . \"####\"###\"####\"  .\n\
-       .     \"#:.    .:#\"###\"#:.    .:#\"  .        .       .\n\
-  .             \"#########\"#########\"        .        .\n\
-        .    \"#:.  \"####\"###\"####\"  .:#\"   .       .\n\
-     .     .  \"#######\"\"##\"##\"\"#######\"                  .\n\
-                .\"##\"#####\"#####\"##\"           .      .\n\
-    .   \"#:. ...  .:##\"###\"###\"##:.  ... .:#\"     .\n\
-      .     \"#######\"##\"#####\"##\"#######\"      .     .\n\
-    .    .     \"#####\"\"#######\"\"#####\"    .      .\n\
-            .     \"      000      \"    .     .\n\
-       .         .   .   000     .        .       .\n\
-.. .. ..................O000O........................ ...... ...",
-"                                   .         ;\n\
+    "                                   .         ;\n\
       .              .              ;%     ;;\n\
         ,           ,                :;%  %;\n\
          :         ;                   :;%;'     .,\n\
@@ -60,8 +44,9 @@ std::string const ShrubberyCreationForm::tree_data[3] = {
                     ;%@@@@%::;.\n\
                    ;%@@@@%%:;;;.\n\
                ...;%@@@@@%%:;;;;,..    Gilo97\n\
-------------------------------------------------\n"
-};
+------------------------------------------------\n"};
+
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("0x00", 145, 137), target("0x00") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form("Shrubbery Creation", 145, 137), target(target) {}
 
@@ -93,7 +78,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
   outfile.open(target_name.c_str(), std::ios::out | std::ios::app);
   if (!outfile.is_open() || outfile.bad())
     throw TargetFileOpenException();
-  for (int i = 0; i < 3; i++)
+  for (int i = 0; i < 2; i++)
   {
     outfile << ShrubberyCreationForm::tree_data[i];
     if (outfile.bad())
