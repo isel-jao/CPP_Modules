@@ -16,7 +16,7 @@ public:
 	Array(unsigned int n = 0) : n(n), arr(nullptr)
 	{
 		if (n != 0)
-			arr = new T();
+			arr = new T();e
 	}
 	Array(Array &obj)
 	{

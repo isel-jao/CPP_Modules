@@ -74,6 +74,9 @@
 		"bit": "cpp",
 		"clocale": "cpp",
 		"compare": "cpp",
-		"concepts": "cpp"
+		"concepts": "cpp",
+		"cerrno": "cpp",
+		"climits": "cpp",
+		"queue": "cpp"
 	}
 }
