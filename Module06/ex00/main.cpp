@@ -6,6 +6,15 @@
 double ft_stod(std::string const &s);
 float ft_stof(std::string const &s);
 
+template <typename T>
+void Converter::printConversion(T c) const
+{
+	printChar(static_cast<char>(c));
+	printInt(static_cast<int>(c));
+	printFloat(static_cast<float>(c));
+	printDouble(static_cast<double>(c));
+};
+
 int main(int argc, char **argv)
 {
 	Converter scalcv;

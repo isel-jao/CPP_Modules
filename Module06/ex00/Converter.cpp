@@ -52,30 +52,38 @@ int Converter::detectType(std::string const &literal) const
 	return floatingPoint ? DOUBLE_TYPE : INT_TYPE;
 }
 
-std::ostream &printFloat(std::ostream &os, float f)
+void printChar(char c)
 {
-	os << f;
-	if (f == roundf(f))
-		os << ".0";
-	os << "f";
-	return os;
-}
-
-std::ostream &printDouble(std::ostream &os, float f)
-{
-	os << f;
-	if (f == roundf(f))
-		os << ".0";
-	return os;
-}
-
-std::ostream &printChar(std::ostream &os, char c)
-{
+	std::cout << "char: ";
 	if (isprint(c))
-		os << "'" << c << "'";
+		std::cout << "'" << c << "'";
 	else
-		os << "Non displayable";
-	return os;
+		std::cout << "Non displayable";
+	std::cout << std::endl;
+}
+
+void printInt(int c)
+{
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
+}
+
+void printFloat(float f)
+{
+	std::cout << "float: ";
+	std::cout << f;
+	if (f == roundf(f))
+		std::cout << ".0";
+	std::cout << "f";
+	std::cout << std::endl;
+}
+
+void printDouble(double f)
+{
+	std::cout << "double: ";
+	std::cout << f;
+	if (f == roundf(f))
+		std::cout << ".0";
+	std::cout << std::endl;
 }
 
 void Converter::printPseudoConversion(std::string const &p, int type)
